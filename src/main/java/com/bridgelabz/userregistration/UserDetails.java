@@ -11,6 +11,7 @@ public class UserDetails {
     private String firstName;
     private String lastName;
     private String emailId;
+    private String mobileNumber;
 
     public String getFirstName() {
         return firstName;
@@ -36,8 +37,16 @@ public class UserDetails {
         this.emailId = emailId;
     }
 
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
     @Override
     public String toString() {
-        return "User-Details : [ First-Name = " + firstName + ", Last-Name = " + lastName + ", Email-ID = " + emailId + " ]";
+        return "User-Details : [ First-Name = " + firstName + ", Last-Name = " + lastName + ", Email-ID = " + emailId + ", Mobile-Number = " + mobileNumber + " ]";
     }
 }
