@@ -14,8 +14,7 @@ public class UserRegMain {
     Scanner scanner;
 
     //constructor
-    public UserRegMain()
-    {
+    public UserRegMain() {
         userDetailsObject = new UserDetails();
         scanner = new Scanner(System.in);
     }
@@ -37,7 +36,32 @@ public class UserRegMain {
             userDetailsObject.setFirstName(firstName);
         }
         else {
-            System.err.println("Wrong Input : Fist letter Should be capital and must contains minimum 3 characters :");
+            System.err.print("Wrong Input : Fist letter Should be capital and must contains minimum 3 characters :\n");
+            System.out.println();
+            enterFirstName();
+        }
+    }
+
+    /**
+     * Name : enterLastName.
+     *
+     * Description : Asking user to enter last name.
+     *
+     * Algorithm : Checking if entered last name follows defined pattern rules or not.
+     * using regex.
+     */
+    public void enterLastName() {
+        System.out.print("ENTER LAST NAME : ");
+        String lastName = scanner.next();
+        //regex first character should be Capital letter and name should have minimum 3 characters.
+        boolean isTrue = Pattern.compile("^[A-Z]{1}[A-z a-z]{2,}$").matcher(lastName).matches();
+        if(isTrue == true) {
+            userDetailsObject.setLastName(lastName);
+        }
+        else {
+            System.err.print("\nWrong Input : Fist letter Should be capital and must contains minimum 3 characters :");
+            System.out.println();
+            enterLastName();
         }
     }
 
@@ -51,14 +75,16 @@ public class UserRegMain {
      */
     public void printAllUserDetails() {
         if(userDetailsObject.getFirstName() != null) {
-            System.out.println(userDetailsObject);
+            System.out.println("\n" + userDetailsObject);
         }
     }
 
     public static void main(String[] args) {
         UserRegMain userObject = new UserRegMain();
+
         //calling methods.
         userObject.enterFirstName();
+        userObject.enterLastName();
         userObject.printAllUserDetails();
     }
 }
