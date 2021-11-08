@@ -151,7 +151,6 @@ public class UserRegMain {
 
     public static void main(String[] args) {
         UserRegMain userObject = new UserRegMain();
-
         //calling methods.
         userObject.enterFirstName();
         userObject.enterLastName();
