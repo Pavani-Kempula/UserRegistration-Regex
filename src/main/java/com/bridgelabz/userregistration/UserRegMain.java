@@ -115,6 +115,29 @@ public class UserRegMain {
     }
 
     /**
+     * Name : enterPassword.
+     *
+     * Description : Asking user to enter password.
+     *
+     * Algorithm : Checking if entered password follows defined pattern rules or not.
+     * using regex.
+     * must contain 8 characters.
+     */
+    public void enterPassword() {
+        System.out.print("ENTER PASSWORD : ");
+        String password = scanner.next();
+        boolean isTrue = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        if(isTrue == true) {
+            userDetailsObject.setPassword(password);
+        }
+        else {
+            System.err.print("\nWrong Input : Password must be of 8 characters :");
+            System.out.println();
+            enterPassword();
+        }
+    }
+
+    /**
      * Name : printAllUserDetails.
      *
      * Description : Printing User Details.
@@ -134,6 +157,7 @@ public class UserRegMain {
         userObject.enterLastName();
         userObject.enterEmailId();
         userObject.enterMobileNumber();
+        userObject.enterPassword();
         userObject.printAllUserDetails();
     }
 }

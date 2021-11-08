@@ -12,6 +12,7 @@ public class UserDetails {
     private String lastName;
     private String emailId;
     private String mobileNumber;
+    private String password;
 
     public String getFirstName() {
         return firstName;
@@ -45,8 +46,17 @@ public class UserDetails {
         this.mobileNumber = mobileNumber;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
-        return "User-Details : [ First-Name = " + firstName + ", Last-Name = " + lastName + ", Email-ID = " + emailId + ", Mobile-Number = " + mobileNumber + " ]";
+        return "User-Details : [ First-Name = " + firstName + ", Last-Name = " + lastName + ", Email-ID = " + emailId + ", Mobile-Number = " + mobileNumber + ", Password = " + password + " ]";
     }
+
 }
