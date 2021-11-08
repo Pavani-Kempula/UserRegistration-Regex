@@ -58,5 +58,4 @@ public class UserDetails {
     public String toString() {
         return "User-Details : [ First-Name = " + firstName + ", Last-Name = " + lastName + ", Email-ID = " + emailId + ", Mobile-Number = " + mobileNumber + ", Password = " + password + " ]";
     }
-
 }

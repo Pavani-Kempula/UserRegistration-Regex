@@ -122,11 +122,12 @@ public class UserRegMain {
      * Algorithm : Checking if entered password follows defined pattern rules or not.
      * using regex.
      * must contain 8 characters.
+     * Should have atleast one UPPER CASE.
      */
     public void enterPassword() {
         System.out.print("ENTER PASSWORD : ");
         String password = scanner.next();
-        boolean isTrue = Pattern.compile("^[a-z]{8}$").matcher(password).matches();
+        boolean isTrue = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).{8,20}$").matcher(password).matches();
         if(isTrue == true) {
             userDetailsObject.setPassword(password);
         }
